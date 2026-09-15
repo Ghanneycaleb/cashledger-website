@@ -240,18 +240,18 @@
         <div class="column">
           <div class="column-2 bg-light">
             <h2>Request Callback</h2>
-            <form action="" class="callback-form">
+            <form action="https://formspree.io/f/xnjegyyr" method="post" class="callback-form">
               <div class="form-control">
                 <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Enter name" />
+                <input type="text" name="name" id="name" placeholder="Enter name" required />
               </div>
               <div class="form-control">
                 <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="Enter email" />
+                <input type="email" name="email" id="email" placeholder="Enter email" required />
               </div>
               <div class="form-control">
                 <label for="phone"></label>
-                <input type="text" name="phone" id="phone" placeholder="Enter phone" />
+                <input type="tel" name="phone" id="phone" placeholder="Enter phone" required />
               </div>
               <input type="submit" value="Send" id="submit" class="btn" />
             </form>
@@ -274,49 +274,7 @@
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"
     integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
   <script src="js/lightbox.min.js"></script>
-  <script>
-    const navbar = document.getElementById('navbar');
-    const hamburger = document.querySelector('.hamburger');
-    let scrolled = false;
-
-    hamburger.addEventListener('click', function () {
-      const isOpen = navbar.classList.toggle('menu-open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-
-    window.onscroll = function () {
-      if (window.scrollY > 100) {
-        if (!scrolled) {
-          navbar.classList.remove('top');
-          navbar.style.transform = 'translateY(-70px)';
-          setTimeout(function () {
-            navbar.style.transform = 'translateY(0)';
-          }, 200);
-          scrolled = true;
-        }
-      } else {
-        navbar.classList.add('top');
-        navbar.style.transform = 'translateY(0)';
-        scrolled = false;
-      }
-    };
-
-    // Smooth Scrolling
-    $('#navbar a, .btn').on('click', function (e) {
-      if (this.hash !== '') {
-        e.preventDefault();
-
-        const hash = this.hash;
-
-        $('html, body').animate(
-          {
-            scrollTop: $(hash).offset().top - 100,
-          },
-          800
-        );
-      }
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
